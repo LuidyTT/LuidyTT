@@ -26,7 +26,19 @@
 
 <h2 align="center"> About Me</h2>
 
-<p align="center">I'm Luidy, a passionate Software Engineering student from Brazil<br><br>- 🔭 I'm currently working as a Software Developer specializing in Java and Web Development<br>- 📚 I'm currently learning React and Node.js to expand my full-stack capabilities<br>- 🌱 Focused on ethical innovation and building scalable solutions that make a difference<br>- 🎨 Passionate about 3D modeling, image/video editing, and automotive design<br>- ✨ Enjoy creating digital art and automotive concepts in Blender and Adobe Creative Suite<br>- 🌍 Bilingual professional with cross-cultural experience in international projects<br>- ⚡ In my free time I enjoy gaming, exploring new technologies, and contributing to open source</p>
+<p align="center">💻 Software Developer focused on Java and Web Development
+
+🚀 Expanding full-stack skills with React and Node.js
+
+🌱 Dedicated to building innovative and ethical technologies
+
+🎨 Enthusiastic about 3D modeling, digital art, and automotive design
+
+🖌️ Creating concepts and visual experiences with Blender & Adobe Creative Suite
+
+🌍 Bilingual, with experience in international and multicultural projects
+
+⚡ In free time: gaming, exploring new tech trends, and contributing to open source</p>
 
 <br>
 <hr>
@@ -35,19 +47,32 @@
 <h2 align="center">🛠 Languages & Tools</h2>
 
 <div align="center">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original-wordmark.svg" height="40" alt="java logo" />
+   <!-- Java -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="50" alt="Java logo" />
+  <!-- JavaScript -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="50" alt="JavaScript logo" />
+  <!-- TypeScript -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="50" alt="TypeScript logo" />
+  <!-- Spring -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="50" alt="Spring logo" />
+  <!-- Angular -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angular/angular-original.svg" height="50" alt="Angular logo" />
+  <!-- HTML5 -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="50" alt="HTML5 logo" />
+  <!-- CSS3 -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="50" alt="CSS3 logo" />
+  <!-- Git -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" height="50" alt="Git logo" />
+  <!-- PostgreSQL -->
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" height="50" alt="PostgreSQL logo" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original-wordmark.svg" height="40" alt="postgressql logo" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" height="50" alt="photoshop logo" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original-wordmark.svg" height="40" alt="spring logo"/>
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg" height="50" alt="premierepro logo" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" height="40" alt="photoshop logo" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg" height="50" alt="illustrator logo" />
   <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/premierepro/premierepro-original.svg" height="40" alt="premierepro logo" />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-original.svg" height="40" alt="illustrator logo" />
-  <img width="12" />
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" height="40" alt="blender logo" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/blender/blender-original.svg" height="50" alt="blender logo" />
 </div>
 
 <br>
