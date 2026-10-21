@@ -76,10 +76,16 @@ export function renderEq(weekly, total) {
   <linearGradient id="barfill" gradientUnits="userSpaceOnUse" x1="0" y1="${BASE}" x2="0" y2="${BASE - MAX_H}">
     <stop offset="0" stop-color="${palette.titaniumDim}"/><stop offset="1" stop-color="${palette.titanium}"/>
   </linearGradient>
+  <linearGradient id="scanfill" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0" stop-color="${palette.cyan}" stop-opacity="0"/><stop offset="1" stop-color="${palette.cyan}" stop-opacity="0.35"/>
+  </linearGradient>
 </defs>
 <rect width="${W}" height="${H}" fill="url(#dusk)"/>
 <circle cx="${W * 0.74}" cy="${BASE}" r="96" fill="${palette.champagne}" opacity="0.12"/>
 <g>${bars}${cap}</g>
+<rect id="scan" x="${X0}" y="${BASE - MAX_H - 12}" width="48" height="${MAX_H + 12}" fill="url(#scanfill)">
+  <animate attributeName="x" values="${X0};${W - X0 - 48}" dur="8s" repeatCount="indefinite"/>
+</rect>
 <rect y="${BASE + 4}" width="${W}" height="${H - BASE - 4}" fill="${palette.panel}"/>
 <rect y="${BASE + 4}" width="${W}" height="2" fill="${palette.titaniumDim}"/>
 <line x1="0" y1="${BASE + 50}" x2="${W}" y2="${BASE + 50}" stroke="${palette.champagne}" stroke-opacity="0.5" stroke-width="3" stroke-dasharray="24 16"><animate attributeName="stroke-dashoffset" values="0;-40" dur="0.8s" repeatCount="indefinite"/></line>

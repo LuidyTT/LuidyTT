@@ -61,7 +61,7 @@ export function renderStats({ total, currentStreak, longestStreak }, langs) {
           return [
             pixelText(labelFor(name), 2, 600, y + 3, palette.titanium),
             `<rect x="${TRACK_X}" y="${y}" width="${TRACK_W}" height="16" fill="${palette.panel}" stroke="${palette.titaniumDim}" stroke-opacity="0.5"/>`,
-            `<rect class="lang-fill" data-w="${fillW}" data-track="${TRACK_W}" x="${TRACK_X}" y="${y}" width="${fillW}" height="16" fill="${palette.titanium}"/>`,
+            `<rect class="lang-fill" data-w="${fillW}" data-track="${TRACK_W}" x="${TRACK_X}" y="${y}" width="${fillW}" height="16" fill="${palette.titanium}"><animate attributeName="width" from="0" to="${fillW}" dur="1.2s" begin="0s" fill="freeze"/></rect>`,
             pixelText(`${(Math.round(percent * 10) / 10).toFixed(1)}%`, 3, TRACK_X + TRACK_W + 16, y - 1, palette.champagne),
           ].join('');
         })
@@ -76,7 +76,7 @@ ${readout('STREAK', currentStreak, 48)}
 ${readout('LONGEST', longestStreak, 208)}
 ${readout('TOTAL', total, 368)}
 <rect x="48" y="180" width="${gaugeW}" height="12" fill="${palette.bg}" stroke="${palette.titaniumDim}" stroke-opacity="0.5"/>
-<rect x="48" y="180" width="${+(gaugeW * ratio).toFixed(2)}" height="12" fill="${palette.cyan}"/>
+<rect x="48" y="180" width="${+(gaugeW * ratio).toFixed(2)}" height="12" fill="${palette.cyan}"><animate attributeName="width" from="0" to="${+(gaugeW * ratio).toFixed(2)}" dur="1.2s" begin="0s" fill="freeze"/></rect>
 ${pixelText('CURRENT VS LONGEST', 2, 48, 204, palette.titaniumDim)}
 <line x1="560" y1="20" x2="560" y2="${H - 20}" stroke="${palette.titaniumDim}" stroke-opacity="0.4"/>
 ${rows}

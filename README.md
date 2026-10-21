@@ -7,21 +7,10 @@
 <div align="center">
   <img src="assets/header-01.svg" width="100%" alt="01 About me" />
 
-  <p>
-    Software developer focused on <b>Java</b> and web development, expanding into full-stack with React and Node.js.<br>
-    I build innovative, ethical technology, and I shape concepts and visual experiences in Blender and the Adobe Creative Suite,<br>
-    with a weakness for automotive design. Bilingual, with international and multicultural project experience.<br>
-    In my free time: gaming, new tech trends and open source.
-  </p>
+  <img src="assets/about.svg" width="100%" alt="Software developer focused on Java and web development, expanding into full-stack with React and Node.js. I build innovative, ethical technology, and I shape concepts and visual experiences in Blender and the Adobe Creative Suite, with a weakness for automotive design. Bilingual, with international and multicultural project experience. In my free time: gaming, new tech trends and open source." />
 
-  <table>
-    <tr>
-      <td align="center"><b>Java &amp; Web</b></td>
-      <td align="center"><b>Full-stack</b></td>
-      <td align="center"><b>Ethical tech</b></td>
-      <td align="center"><b>3D &amp; Design</b></td>
-    </tr>
-  </table>
+  <br>
+  <img src="assets/languages.svg" width="100%" alt="Spoken languages: Portuguese, native; English, intermediate and improving." />
 </div>
 
 <br>
@@ -73,7 +62,7 @@
 
 <div align="center">
   <img src="assets/header-05.svg" width="100%" alt="05 Garage and sound" />
-  <img src="assets/garage.svg" width="100%" alt="Now playing Titanium by David Guetta, favorite artists and motorsport loves." />
+  <img src="assets/garage.svg" width="100%" alt="Now playing Titanium by David Guetta, and favorite artists." />
 </div>
 
 <br>

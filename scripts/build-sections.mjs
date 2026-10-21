@@ -6,8 +6,8 @@ import { pixelText, textWidth } from './lib/pixel.mjs';
 
 const W = 1200;
 const X0 = 48;
+const GARAGE_H = 170;
 
-export const GARAGE_LINE = 'GROUP B · LE MANS · NURBURGRING · FERRARI · LAMBORGHINI';
 const ARTISTS = ['CALVIN HARRIS', 'DAVID GUETTA', 'ALOK', 'IMAGINE DRAGONS'];
 const NOW_PLAYING = 'TITANIUM - DAVID GUETTA';
 const LOOP = '6s';
@@ -21,6 +21,7 @@ export function renderHeader(num, title, tag) {
 ${pixelText(`${num} // ${title}`, 4, X0, 12, palette.titanium)}
 ${tagSvg}
 <rect x="${X0}" y="46" width="${W - 2 * X0}" height="1" fill="${palette.titaniumDim}" fill-opacity="0.5"/>
+<rect x="${X0}" y="45" width="64" height="3" fill="${palette.cyan}" opacity="0.8"><animateTransform attributeName="transform" type="translate" values="0 0;${W - 2 * X0 - 64} 0" dur="4s" repeatCount="indefinite"/></rect>
 </svg>
 `;
 }
@@ -56,6 +57,7 @@ function equalizer() {
   }).join('');
 }
 
+// The "car radio": what is playing, who it is by, and a progress bar.
 export function renderGarage() {
   let cx = X0;
   const chips = ARTISTS.map((name) => {
@@ -65,16 +67,17 @@ export function renderGarage() {
     return g;
   }).join('');
 
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} 220" width="${W}" height="220" role="img" aria-label="Now playing: Titanium by David Guetta. Favorite artists: Calvin Harris, David Guetta, Alok, Imagine Dragons. Motorsport: Group B, Le Mans, Nurburgring, Ferrari, Lamborghini.">
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${GARAGE_H}" width="${W}" height="${GARAGE_H}" role="img" aria-label="Now playing: Titanium by David Guetta. Favorite artists: Calvin Harris, David Guetta, Alok, Imagine Dragons.">
 <defs>${typedReveal()}</defs>
-<rect width="${W}" height="220" fill="${palette.panel}"/>
+<rect width="${W}" height="${GARAGE_H}" fill="${palette.panel}"/>
 ${pixelText('NOW PLAYING', 2, X0, 24, palette.titaniumDim)}
 <rect x="${X0 + 148}" y="24" width="6" height="6" fill="${palette.cyan}"><animate attributeName="opacity" values="1;0.2;1" dur="2s" repeatCount="indefinite"/></rect>
 <g clip-path="url(#typed)">${pixelText(NOW_PLAYING, 5, X0, 52, palette.champagne)}</g>
 ${equalizer()}
 ${chips}
-${pixelText(GARAGE_LINE, 3, X0, 160, palette.titaniumDim)}
-${frame(W, 220)}
+<rect x="${X0}" y="146" width="${W - 2 * X0}" height="4" fill="none" stroke="${palette.titaniumDim}" stroke-opacity="0.5"/>
+<rect x="${X0}" y="146" width="420" height="4" fill="${palette.champagne}"><animate attributeName="width" values="0;${W - 2 * X0}" dur="30s" repeatCount="indefinite"/></rect>
+${frame(W, GARAGE_H)}
 </svg>
 `;
 }
