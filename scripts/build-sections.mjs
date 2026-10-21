@@ -85,10 +85,9 @@ ${frame(W, GARAGE_H)}
 const HEADERS = [
   ['01', 'ABOUT ME', 'WHO I AM'],
   ['02', 'STACK', 'LANGUAGES / TOOLS'],
-  ['03', 'PROJECTS', 'IN PROGRESS'],
-  ['04', 'TELEMETRY', 'ACTIVITY / LANGUAGES'],
-  ['05', 'GARAGE & SOUND', 'NOW PLAYING'],
-  ['06', 'CONTACT', 'OPEN CHANNEL'],
+  ['03', 'TELEMETRY', 'ACTIVITY / LANGUAGES'],
+  ['04', 'GARAGE & SOUND', 'NOW PLAYING'],
+  ['05', 'CONTACT', 'OPEN CHANNEL'],
 ];
 
 export function writeSections(outDir) {

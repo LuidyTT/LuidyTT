@@ -39,21 +39,7 @@
 <br>
 
 <div align="center">
-  <img src="assets/header-03.svg" width="100%" alt="03 Projects" />
-
-  <table>
-    <tr>
-      <td align="center" width="33%"><b>PROJECT SLOT 01</b><br><sub>PLACEHOLDER: add a featured project here</sub></td>
-      <td align="center" width="33%"><b>PROJECT SLOT 02</b><br><sub>PLACEHOLDER: add a featured project here</sub></td>
-      <td align="center" width="33%"><b>PROJECT SLOT 03</b><br><sub>PLACEHOLDER: add a featured project here</sub></td>
-    </tr>
-  </table>
-</div>
-
-<br>
-
-<div align="center">
-  <img src="assets/header-04.svg" width="100%" alt="04 Telemetry" />
+  <img src="assets/header-03.svg" width="100%" alt="03 Telemetry" />
   <img src="assets/eq.svg" width="100%" alt="Contribution graph drawn as an equalizer above a road, with a car driving by." />
   <img src="assets/stats.svg" width="100%" alt="GitHub streak, total contributions and top languages." />
 </div>
@@ -61,19 +47,19 @@
 <br>
 
 <div align="center">
-  <img src="assets/header-05.svg" width="100%" alt="05 Garage and sound" />
+  <img src="assets/header-04.svg" width="100%" alt="04 Garage and sound" />
   <img src="assets/garage.svg" width="100%" alt="Now playing Titanium by David Guetta, and favorite artists." />
 </div>
 
 <br>
 
 <div align="center">
-  <img src="assets/header-06.svg" width="100%" alt="06 Contact" />
+  <img src="assets/header-05.svg" width="100%" alt="05 Contact" />
 
   <a href="https://www.linkedin.com/in/luidy-t-teles-a3721b375" target="_blank">
-    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&style=for-the-badge" height="25" alt="LinkedIn" />
+    <img src="assets/contact.svg" width="100%" alt="Contact Luidy T Teles on LinkedIn" />
   </a>
 
-  <br><br>
-  <img src="https://visitor-badge.laobi.icu/badge?page_id=luidytt.luidytt" height="20" alt="Visitor counter" />
+  <br>
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=luidytt.luidytt&left_color=%230d1117&right_color=%232c394b&left_text=VISITORS" height="20" alt="Visitor counter" />
 </div>

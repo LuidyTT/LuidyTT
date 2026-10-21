@@ -20,3 +20,22 @@ export const CAR_COLORS = {
   K: '#05070a',
   H: palette.titaniumDim,
 };
+
+// Palm tree silhouette for the oceanfront-drive scene (one flat color).
+export const PALM = [
+  '....PPPP.PPPP....',
+  '..PPPPPPPPPPPPP..',
+  '.PPP..PPPPP...PPP',
+  'PP....PPPP.....PP',
+  'P......PP.......P',
+  '.......PP........',
+  '......PP.........',
+  '......PP.........',
+  '......PP.........',
+  '.....PP..........',
+  '.....PP..........',
+  '.....PP..........',
+  '....PP...........',
+  '....PP...........',
+  '....PP...........',
+];

@@ -3,14 +3,17 @@ import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { palette, frame } from './lib/theme.mjs';
 import { sprite, pixelText, textWidth } from './lib/pixel.mjs';
-import { CAR, CAR_COLORS } from './lib/art.mjs';
+import { DELOREAN, DELOREAN_COLORS } from './lib/delorean.mjs';
 import { sampleWeekly, sampleStats } from './lib/sample-data.mjs';
+import { sun, floor, palms } from './lib/retrowave.mjs';
 
 const W = 1200;
-const H = 360;
+const H = 440;
 const X0 = 48;
 const CHART_W = W - 2 * X0;
 const BASE = 272;
+const HORIZON = BASE + 4;
+const VPX = W / 2;
 const MAX_H = 170;
 const MIN_SLOTS = 52;
 const MAX_WEEKS = 54;
@@ -65,8 +68,25 @@ export function renderEq(weekly, total) {
 
   const synced = total !== null;
   const totalLabel = synced ? `${Math.max(0, Math.round(total))} IN THE LAST YEAR` : 'SYNC PENDING';
-  const px = 4;
-  const carY = 322 - CAR.length * px;
+  const CAR_PX = 4;
+  const carW = DELOREAN[0].length * CAR_PX;
+  const carH = DELOREAN.length * CAR_PX;
+  const carX = VPX - carW / 2;
+  const carY = H - 8 - carH;
+  const glow = (col) => {
+    // Glow over one tail light housing: sprite columns col..col+10, rows 11..15.
+    const gx = carX + col * CAR_PX - 4;
+    return `<rect x="${gx}" y="${carY + 11 * CAR_PX - 4}" width="${11 * CAR_PX + 8}" height="${5 * CAR_PX + 8}" fill="#c2374a" opacity="0.3"><animate attributeName="opacity" values="0.15;0.45;0.15" dur="1.8s" repeatCount="indefinite"/></rect>`;
+  };
+  const delorean = `<g id="delorean" data-center="${VPX}">
+  <animateTransform attributeName="transform" type="translate" values="-8 0;8 0;-8 0" dur="6s" repeatCount="indefinite"/>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;0 -2;0 0" dur="0.8s" repeatCount="indefinite"/>
+    <rect id="underglow" x="${carX + 10}" y="${carY + carH - 4}" width="${carW - 20}" height="6" fill="${palette.cyan}" opacity="0.5"><animate attributeName="opacity" values="0.25;0.75;0.25" dur="1.6s" repeatCount="indefinite"/></rect>
+    <g id="taillights">${glow(4)}${glow(35)}</g>
+    ${sprite(DELOREAN, DELOREAN_COLORS, CAR_PX, carX, carY)}
+  </g>
+</g>`;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="${synced ? `Contribution graph: ${Math.max(0, Math.round(total))} contributions in the last year, drawn as an equalizer above a road.` : 'Contribution graph waiting for the first sync.'}">
 <defs>
@@ -81,18 +101,17 @@ export function renderEq(weekly, total) {
   </linearGradient>
 </defs>
 <rect width="${W}" height="${H}" fill="url(#dusk)"/>
-<circle cx="${W * 0.74}" cy="${BASE}" r="96" fill="${palette.champagne}" opacity="0.12"/>
+${sun(VPX, HORIZON, 150)}
+<rect y="${HORIZON}" width="${W}" height="${H - HORIZON}" fill="${palette.panel}"/>
+${floor(VPX, HORIZON, W, H)}
+${palms(VPX, HORIZON, H)}
 <g>${bars}${cap}</g>
 <rect id="scan" x="${X0}" y="${BASE - MAX_H - 12}" width="48" height="${MAX_H + 12}" fill="url(#scanfill)">
   <animate attributeName="x" values="${X0};${W - X0 - 48}" dur="8s" repeatCount="indefinite"/>
 </rect>
-<rect y="${BASE + 4}" width="${W}" height="${H - BASE - 4}" fill="${palette.panel}"/>
-<rect y="${BASE + 4}" width="${W}" height="2" fill="${palette.titaniumDim}"/>
-<line x1="0" y1="${BASE + 50}" x2="${W}" y2="${BASE + 50}" stroke="${palette.champagne}" stroke-opacity="0.5" stroke-width="3" stroke-dasharray="24 16"><animate attributeName="stroke-dashoffset" values="0;-40" dur="0.8s" repeatCount="indefinite"/></line>
-<g transform="translate(-200 ${carY})">
-  <animateTransform attributeName="transform" type="translate" values="-200 ${carY};${W + 40} ${carY}" dur="14s" repeatCount="indefinite"/>
-  ${sprite(CAR, CAR_COLORS, px, 0, 0)}
-</g>
+<rect y="${BASE - 2}" width="${W}" height="6" fill="${palette.champagne}" opacity="0.1"/>
+<rect y="${HORIZON}" width="${W}" height="2" fill="${palette.champagne}" opacity="0.6"/>
+${delorean}
 ${pixelText('CONTRIBUTIONS', 3, X0, 28, palette.titanium)}
 ${pixelText(totalLabel, 3, W - X0 - textWidth(totalLabel, 3), 28, palette.champagne)}
 ${frame(W, H)}
