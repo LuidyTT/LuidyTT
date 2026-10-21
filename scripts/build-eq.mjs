@@ -14,6 +14,7 @@ const BASE = 272;
 const MAX_H = 170;
 const MIN_SLOTS = 52;
 const MAX_WEEKS = 54;
+const MIN_ACTIVE_FOR_CLAMP = 20;
 
 const DAY = 86400000;
 
@@ -32,7 +33,9 @@ export function weeklyTotals(days) {
 // Scale to the 95th percentile of non-zero weeks so one outlier cannot flatten the rest.
 function scaleFor(weekly) {
   const nz = weekly.filter((v) => v > 0).sort((a, b) => a - b);
-  return nz.length ? nz[Math.floor(0.95 * (nz.length - 1))] : 1;
+  if (nz.length === 0) return 1;
+  // With few active weeks the 95th percentile is just the runner-up; use the true max.
+  return nz.length >= MIN_ACTIVE_FOR_CLAMP ? nz[Math.floor(0.95 * (nz.length - 1))] : nz[nz.length - 1];
 }
 
 export function renderEq(weekly, total) {

@@ -24,6 +24,8 @@ export async function fetchContribData(login, token, fetchFn = fetch) {
   const cal = data?.user?.contributionsCollection?.contributionCalendar;
   if (!cal) throw new Error(`GitHub user "${login}" not found`);
 
+  if (!Number.isFinite(cal.totalContributions)) throw new Error('GitHub returned a malformed contribution total');
+
   const days = cal.weeks
     .flatMap((w) => w.contributionDays)
     .map((d) => ({ date: d.date, count: d.contributionCount }))

@@ -11,7 +11,7 @@
     Software developer focused on <b>Java</b> and web development, expanding into full-stack with React and Node.js.<br>
     I build innovative, ethical technology, and I shape concepts and visual experiences in Blender and the Adobe Creative Suite,<br>
     with a weakness for automotive design. Bilingual, with international and multicultural project experience.<br>
-    In free time: gaming, new tech trends and open source.
+    In my free time: gaming, new tech trends and open source.
   </p>
 
   <table>

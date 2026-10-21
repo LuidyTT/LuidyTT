@@ -11,18 +11,33 @@ const TRACK_X = 780;
 const TRACK_W = 260;
 const MAX_LABEL = 14;
 
-const SYMBOLS = { 'C#': 'C SHARP', 'C++': 'C PLUS' };
+const SYMBOLS = {
+  'C#': 'C SHARP',
+  'C++': 'C PLUS',
+  'F#': 'F SHARP',
+  'Q#': 'Q SHARP',
+  'Jupyter Notebook': 'JUPYTER',
+  'Visual Basic .NET': 'VB.NET',
+};
+
+// Cut at a word boundary so labels never end mid-word.
+function fit(label) {
+  if (label.length <= MAX_LABEL) return label;
+  const head = label.slice(0, MAX_LABEL + 1);
+  const cut = head.lastIndexOf(' ');
+  return (cut > 0 ? head.slice(0, cut) : label.slice(0, MAX_LABEL)).trim();
+}
 
 // Language names come from GitHub; the pixel font only covers a small charset.
 export function labelFor(name) {
   const mapped = SYMBOLS[name] ?? name;
-  const clean = mapped
-    .toUpperCase()
-    .replace(/[^A-Z0-9 \-.:/&'·]/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
-    .slice(0, MAX_LABEL)
-    .trim();
+  const clean = fit(
+    mapped
+      .toUpperCase()
+      .replace(/[^A-Z0-9 \-.:/&'·]/g, '')
+      .replace(/\s+/g, ' ')
+      .trim(),
+  );
   return clean || 'OTHER';
 }
 
@@ -55,7 +70,7 @@ export function renderStats({ total, currentStreak, longestStreak }, langs) {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${W} ${H}" width="${W}" height="${H}" role="img" aria-label="GitHub stats: ${int(total)} contributions, current streak ${int(currentStreak)} days, longest streak ${int(longestStreak)} days.">
 <rect width="${W}" height="${H}" fill="${palette.panel}"/>
-${pixelText('STATUS', 3, 48, 28, palette.titanium)}
+${pixelText('STATUS - LAST 12 MONTHS', 3, 48, 28, palette.titanium)}
 ${pixelText('TOP LANGUAGES', 3, 600, 28, palette.titanium)}
 ${readout('STREAK', currentStreak, 48)}
 ${readout('LONGEST', longestStreak, 208)}
