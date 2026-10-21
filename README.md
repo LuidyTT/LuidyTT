@@ -54,9 +54,9 @@
 
   <table>
     <tr>
-      <td align="center" width="33%"><b>PLACEHOLDER</b><br><sub>Featured project slot 1</sub></td>
-      <td align="center" width="33%"><b>PLACEHOLDER</b><br><sub>Featured project slot 2</sub></td>
-      <td align="center" width="33%"><b>PLACEHOLDER</b><br><sub>Featured project slot 3</sub></td>
+      <td align="center" width="33%"><b>PROJECT SLOT 01</b><br><sub>PLACEHOLDER: add a featured project here</sub></td>
+      <td align="center" width="33%"><b>PROJECT SLOT 02</b><br><sub>PLACEHOLDER: add a featured project here</sub></td>
+      <td align="center" width="33%"><b>PROJECT SLOT 03</b><br><sub>PLACEHOLDER: add a featured project here</sub></td>
     </tr>
   </table>
 </div>
